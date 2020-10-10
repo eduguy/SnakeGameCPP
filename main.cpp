@@ -9,6 +9,12 @@ int main(){
     gameOn = true;
     Board b(size, &snake);
     int i = 0;
+    while (gameOn) {
+        //get userInput
+        //change direction
+        //move
+        //check boundaries/food
+    }
     // while (i<3){
     //     snake.move();
     //     b.printOut();
