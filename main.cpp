@@ -39,7 +39,6 @@ int main(){
     gameOn = true;
     int i = 0;
     b.newFood();
-    // b.printOut();
 
     while (true) {
         checkUserInput();
@@ -49,7 +48,7 @@ int main(){
         b.printOut();
         // i++;
         //TODO: just need this for now to make it easier to test
-        // Sleep(100);
+        Sleep(100);
         
     }
 

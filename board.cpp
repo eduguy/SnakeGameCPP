@@ -51,8 +51,8 @@ void Board::printOut() {
 
 void Board::newFood() {
     //TODO: why is this not really random?
-    int randX = rand() % s;
-    int randY = rand() & s;
+    int randX = rand() % s - 1;
+    int randY = rand() & s - 1;
     board[randY][randX] = Food;
 }
 
@@ -62,7 +62,7 @@ void Board::checkFood() {
         sn->grow();
         int y1 = x.second;
         int x1 = x.first;
-        board[y1][x1] == Empty;
+        board[y1][x1] = Empty;
         newFood();
         //TODO: Confirm that these are the right cooridnates
         //      program stops after the second food?
