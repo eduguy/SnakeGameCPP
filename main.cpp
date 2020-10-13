@@ -38,20 +38,21 @@ void checkUserInput() {
 int main(){
     gameOn = true;
     int i = 0;
-    cout << "Main" <<endl;
-    while (i<50) {
+    b.newFood();
+    // b.printOut();
+
+    while (true) {
         checkUserInput();
         snake.move();
+        b.checkBoundary();
+        b.checkFood();
         b.printOut();
-        i++;
-        // Sleep(10);
+        // i++;
+        //TODO: just need this for now to make it easier to test
+        // Sleep(100);
         
     }
-    // while (i<3){
-    //     snake.move();
-    //     b.printOut();
-    //     i++;
-    // }
+
         
 }
 

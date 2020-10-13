@@ -20,6 +20,29 @@ void Snake::move() {
     if (dir == West) {
         head.first -= speedX;
     }
+    //TODO: with a tail, moving means head moves by speedx, then 2nd gets head val
+    //      third gets 2nd val, etc
+}
+void Snake::grow(){
+    //TODO: grow, add a new so the tail array
+    pair <int, int> a;
+    if (dir == North) {
+        a.first = head.first;
+        a.second = head.second +1;
+    }
+    if (dir == East) {
+        a.first = head.first;
+        a.second = head.second -1;
+    }
+    if (dir == South) {
+        a.first = head.first;
+        a.second = head.second - 1;
+    }
+    if (dir == West) {
+        a.first = head.first;
+        a.second = head.second +1;
+    }
+    tail.push_back(a);
 }
 
 void Snake::setDirection(int d) {

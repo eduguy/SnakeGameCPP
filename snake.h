@@ -15,13 +15,14 @@ class Snake
     void setSpeedY(int y);
     void setDirection(int d);
     pair<int,int> getHead();
+    void grow();
+    vector<pair<int,int>> tail;
 
     private:
 
     pair<int,int> head;
     int length;
     //list of points in the tail need to use it for collisions
-    vector<pair<int,int>> tail;
     int speedX;
     int speedY;
     enum Directions {North, East, South, West} dir;
