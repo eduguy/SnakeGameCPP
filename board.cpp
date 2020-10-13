@@ -5,7 +5,7 @@ Board:: Board(int size, Snake* snake) {
     s= size;
     sn->setX((int) s/2);
     sn->setY((int) s/2);
-
+    
     //initialize the board array
     for (int i = 0; i<s; i++) {
         vector<states> vec;
@@ -15,6 +15,7 @@ Board:: Board(int size, Snake* snake) {
         board.push_back(vec);
     }
 }
+
 
 void Board::printOut() {
     system("cls");

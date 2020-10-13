@@ -11,6 +11,7 @@ class Board
 
     Board(int size, Snake* snake); 
     void printOut();
+    void checkBoundary();
     private:
 
     enum states {Occupied, Empty, Food} state;

@@ -1,19 +1,51 @@
 #include <iostream>
 #include "board.h"
+#include <conio.h> 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 using namespace std;
 int input;
 bool gameOn;
 int size = 12;
+Snake snake;
+Board b(size, &snake);
+void checkUserInput() {
+    //TODO: not sure if getch is a good solution
+    //      
+    if(_kbhit()) {
+    char input = getch();
+    switch(input) {
+        case 'w': 
+            snake.setDirection(1);
+            break;
+        case 'a': 
+            snake.setDirection(4);
+            break;
+        case 's': 
+            snake.setDirection(3);
+            break;
+        case 'd': 
+            snake.setDirection(2);
+            break;
+        default:
+            break;
+    }
+    }
+}
 int main(){
-    Snake snake;
     gameOn = true;
-    Board b(size, &snake);
     int i = 0;
-    while (gameOn) {
-        //get userInput
-        //change direction
-        //move
-        //check boundaries/food
+    cout << "Main" <<endl;
+    while (i<50) {
+        checkUserInput();
+        snake.move();
+        b.printOut();
+        i++;
+        // Sleep(10);
+        
     }
     // while (i<3){
     //     snake.move();
